@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devi ❤️ Shubham | A Story in Two Cities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">29 • 01 • 2027</p>
+    <h1>Devi <span>♥</span> Shubham</h1>
+    <p class="tagline">A Story in Two Cities</p>
+    <p class="subtagline">Prayagraj · Pune · Forever</p>
+    <a class="btn" href="#journey">Begin the Journey ↓</a>
+  </div>
+</header>
+
+<main>
+<section class="intro section">
+  <p class="eyebrow">THE STORY BEGINS</p>
+  <h2>Two cities.<br><em>One beautiful beginning.</em></h2>
+  <p>From the wedding celebrations in Prayagraj to the reception in Pune, every moment is part of one story.</p>
+</section>
+
+<section class="journey section" id="journey">
+  <p class="eyebrow">THE JOURNEY</p>
+  <h2>Prayagraj → Pune → Forever</h2>
+  <div class="journey-line">
+    <article class="city-card">
+      <span class="number">01</span>
+      <h3>PRAYAGRAJ</h3>
+      <p>The Beginning</p>
+      <strong>29 January 2027 · 9:00 PM</strong>
+      <button onclick="showDetails('prayagraj')">Explore Wedding</button>
+    </article>
+    <div class="connector">✦</div>
+    <article class="city-card">
+      <span class="number">02</span>
+      <h3>PUNE</h3>
+      <p>The Celebration</p>
+      <strong>04 February 2027 · 7:00 PM</strong>
+      <button onclick="showDetails('pune')">Explore Reception</button>
+    </article>
+  </div>
+  <div id="details" class="details"></div>
+</section>
+
+<section class="countdown section" id="countdown-section">
+  <p class="eyebrow">UNTIL THE STORY BEGINS</p>
+  <h2>29 January 2027</h2>
+  <div id="countdown" class="timer"></div>
+</section>
+
+<section class="story section" id="story">
+  <p class="eyebrow">CHAPTERS</p>
+  <h2>Our Story</h2>
+  <div class="chapters">
+    <button onclick="chapter(1)">Chapter I<br><small>Before They Met</small></button>
+    <button onclick="chapter(2)">Chapter II<br><small>The Beginning</small></button>
+    <button onclick="chapter(3)">Chapter III<br><small>Two Families</small></button>
+    <button onclick="chapter(4)">Chapter IV<br><small>The Wedding</small></button>
+  </div>
+  <div id="chapterText" class="story-box">Choose a chapter to open the story.</div>
+</section>
+
+<section class="features section">
+  <p class="eyebrow">EXPLORE</p>
+  <h2>Your Wedding Experience</h2>
+  <div class="feature-grid">
+    <article><span>🎟️</span><h3>Wedding Pass</h3><p>Generate your personalized digital guest pass.</p><button onclick="openModal('passModal')">Generate Pass</button></article>
+    <article><span>🧩</span><h3>Couple Quiz</h3><p>Think you know Devi & Shubham?</p><button onclick="openModal('quizModal')">Take the Quiz</button></article>
+    <article><span>📍</span><h3>City Map</h3><p>Find the celebrations in Prayagraj and Pune.</p><button onclick="document.getElementById('travel').scrollIntoView({behavior:'smooth'})">Explore Map</button></article>
+    <article><span>✈️</span><h3>Travel Guide</h3><p>Everything guests need for the journey.</p><button onclick="document.getElementById('travel').scrollIntoView({behavior:'smooth'})">Plan Your Trip</button></article>
+    <article><span>💌</span><h3>Guestbook</h3><p>Leave a message for the couple.</p><button onclick="openModal('guestModal')">Write a Message</button></article>
+    <article><span>🕵️</span><h3>Secret</h3><p>There may be something hidden here...</p><button onclick="secret()">Find It</button></article>
+  </div>
+</section>
+
+<section class="travel section" id="travel">
+  <p class="eyebrow">YOUR JOURNEY</p>
+  <h2>Prayagraj & Pune</h2>
+  <div class="map-box">
+    <div class="map-city"><span>📍</span><h3>PRAYAGRAJ</h3><p>Wedding · 29 Jan</p><button onclick="alert('Venue and Google Maps link will go here.')">Open Location</button></div>
+    <div class="route">✈︎ ───────── ✦ ───────── ✈︎</div>
+    <div class="map-city"><span>📍</span><h3>PUNE</h3><p>Reception · 04 Feb</p><button onclick="alert('Reception venue and Google Maps link will go here.')">Open Location</button></div>
+  </div>
+  <p class="note">Hotel, transport, parking and arrival information can be added here.</p>
+</section>
+
+
+<section class="birthday-secret section" id="birthday-secret">
+  <p class="eyebrow">A LITTLE SECRET</p>
+  <h2>One for every part of Devi ✨</h2>
+  <p>Click the button as many times as the secret date tells you to unlock a special surprise. ❤️</p>
+  <button id="birthdayButton" onclick="birthdayClick()">💜 Click for a Surprise</button>
+  <p id="birthdayCounter" aria-live="polite">Clicks: 0</p>
+  <div id="birthdaySurprise" class="birthday-surprise" hidden>
+    <h3>🎉 You found Devi's secret!</h3>
+    <p>Some dates are special, but some people make every day special. Here's to Devi &amp; Shubham and their forever story! ❤️</p>
+  </div>
+</section>
+
+<section class="guestbook section">
+  <p class="eyebrow">A MESSAGE FOR THE COUPLE</p>
+  <h2>Leave Something Behind ❤️</h2>
+  <button class="btn" onclick="openModal('guestModal')">Write a Message</button>
+</section>
+
+<section class="memories section" id="memories">
+  <p class="eyebrow">AFTER THE CELEBRATION</p>
+  <h2>The Memories</h2>
+  <div class="memory-grid">
+    <div>📸<br><span>Wedding Gallery</span></div>
+    <div>🎬<br><span>Wedding Film</span></div>
+    <div>🎙️<br><span>Guest Messages</span></div>
+  </div>
+  <p>After the wedding, this section becomes the living archive of the celebration.</p>
+</section>
+</main>
+
+<footer>
+  <h2>Devi ♥ Shubham</h2>
+  <p>Prayagraj — The Beginning · Pune — The Celebration · Forever — The Journey</p>
+</footer>
+
+<!-- Pass Modal -->
+<div class="modal" id="passModal"><div class="modal-card">
+  <button class="close" onclick="closeModal('passModal')">×</button>
+  <h2>Your Wedding Pass</h2>
+  <input id="guestName" placeholder="Enter your name">
+  <button class="btn" onclick="generatePass()">Generate</button>
+  <div id="passResult"></div>
+</div></div>
+
+<!-- Quiz Modal -->
+<div class="modal" id="quizModal"><div class="modal-card">
+  <button class="close" onclick="closeModal('quizModal')">×</button>
+  <h2>How Well Do You Know Them?</h2>
+  <p>Who is more likely to be late? 😄</p>
+  <button onclick="quizAnswer(true)">Devi</button>
+  <button onclick="quizAnswer(false)">Shubham</button>
+  <p id="quizResult"></p>
+</div></div>
+
+<!-- Guest Modal -->
+<div class="modal" id="guestModal"><div class="modal-card">
+  <button class="close" onclick="closeModal('guestModal')">×</button>
+  <h2>Leave a Message ❤️</h2>
+  <textarea id="message" placeholder="Write something for the couple..."></textarea>
+  <button class="btn" onclick="sendMessage()">Send</button>
+  <p id="messageResult"></p>
+</div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
